@@ -3,7 +3,7 @@ Cms::Fortress.configure do |config|
   config.theme = :wide
 
   # Turn off page workflow options
-  # config.enable_page_workflow = false
+  config.enable_page_workflow = true
   # Turn off page caching options
   # config.enable_page_caching = false
 

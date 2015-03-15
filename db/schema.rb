@@ -57,6 +57,15 @@ ActiveRecord::Schema.define(version: 7) do
   add_index "cms_fortress_users", ["email"], name: "index_cms_fortress_users_on_email", unique: true
   add_index "cms_fortress_users", ["reset_password_token"], name: "index_cms_fortress_users_on_reset_password_token", unique: true
 
+  create_table "cms_page_workflows", force: true do |t|
+    t.integer  "cms_page_id"
+    t.integer  "status_id"
+    t.date     "published_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "site_id"
+  end
+
   create_table "comfy_cms_blocks", force: true do |t|
     t.string   "identifier",                      null: false
     t.text     "content",        limit: 16777215
@@ -122,22 +131,22 @@ ActiveRecord::Schema.define(version: 7) do
   add_index "comfy_cms_layouts", ["site_id", "identifier"], name: "index_comfy_cms_layouts_on_site_id_and_identifier", unique: true
 
   create_table "comfy_cms_pages", force: true do |t|
-    t.integer  "site_id",                                             null: false
+    t.integer  "site_id",                                         null: false
     t.integer  "layout_id"
     t.integer  "parent_id"
     t.integer  "target_page_id"
-    t.string   "label",                                               null: false
+    t.string   "label",                                           null: false
     t.string   "slug"
-    t.string   "full_path",                                           null: false
+    t.string   "full_path",                                       null: false
     t.text     "content_cache",  limit: 16777215
-    t.integer  "position",                        default: 0,         null: false
-    t.integer  "children_count",                  default: 0,         null: false
-    t.boolean  "is_published",                    default: true,      null: false
-    t.boolean  "is_shared",                       default: false,     null: false
+    t.integer  "position",                        default: 0,     null: false
+    t.integer  "children_count",                  default: 0,     null: false
+    t.boolean  "is_published",                    default: true,  null: false
+    t.boolean  "is_shared",                       default: false, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "cached_timeout",                  default: 0
-    t.string   "aasm_state",                      default: "drafted"
+    t.string   "aasm_state",                      default: "new"
     t.date     "published_date"
   end
 
