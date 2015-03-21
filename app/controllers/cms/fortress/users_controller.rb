@@ -44,7 +44,7 @@ class Cms::Fortress::UsersController < Comfy::Admin::Cms::BaseController
   # POST /cms/fortress/users.json
   def create
     @cms_fortress_user = @site.users.build(user_params)
-    raise CanCan::AccessDenied.new("Your are not allowed to create a super user.") if @cms_fortress_user.type.eql?(:super_user) && !current_cms_fortress_user.type.eql?(:super_user)
+    raise CanCan::AccessDenied.new("You are not allowed to create a super user.") if @cms_fortress_user.type.eql?(:super_user) && !current_cms_fortress_user.type.eql?(:super_user)
     @cms_fortress_user.site_id = nil if @cms_fortress_user.type.eql?(:super_user)
 
     if @cms_fortress_user.save
@@ -66,7 +66,7 @@ class Cms::Fortress::UsersController < Comfy::Admin::Cms::BaseController
   def update
     user = user_params
 
-    raise CanCan::AccessDenied.new("Your are not allowed to create a super user.") if user[:type_id].eql?(1) && !current_cms_fortress_user.type.eql?(:super_user)
+    raise CanCan::AccessDenied.new("You are not allowed to create a super user.") if user[:type_id].eql?(1) && !current_cms_fortress_user.type.eql?(:super_user)
 
     if user[:password].blank?
       user.delete(:password)

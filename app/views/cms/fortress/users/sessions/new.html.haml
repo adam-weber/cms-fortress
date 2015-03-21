@@ -17,4 +17,5 @@
               = f.check_box :remember_me
               = t('cms.fortress.users.sessions.new.remember_me')
         = f.submit t('cms.fortress.users.sessions.new.sign_in'), :class => "btn btn-primary btn-md"
+        = link_to "Sign in with Google", cms_fortress_user_omniauth_authorize_path(:google_oauth2)
         = render "devise/shared/links"

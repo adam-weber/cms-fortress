@@ -9,9 +9,25 @@ class ActionDispatch::Routing::Mapper
         :sign_in => 'login', :sign_out => 'logout'
       },
       :controllers => {
+        :omniauth_callbacks => "cms/fortress/users/omniauth_callbacks",
         :sessions => 'cms/fortress/users/sessions',
         :passwords => 'cms/fortress/users/passwords'
       }
+
+    # devise_for "cms/fortress/users", 
+    #   :path => path,
+    #   :path_names => {
+    #     :sign_in => 'login', :sign_out => 'logout'
+    #   },
+    #   :controllers => { 
+    #     :omniauth_callbacks => "cms/fortress/users/omniauth_callbacks",
+    #     :sessions => 'cms/fortress/users/sessions',
+    #     :passwords => 'cms/fortress/users/passwords'
+    #   }
+
+    devise_scope "cms/fortress/users" do
+      get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
+    end
 
     scope path, module: 'cms/fortress' do
       resources :roles, :as => 'cms_fortress_roles' do

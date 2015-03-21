@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'rails', '~> 4.0', '>= 4.0.0'
   s.add_dependency 'comfortable_mexican_sofa', '~> 1.12', '>= 1.12.5'
   s.add_dependency 'devise',                    '~> 3.2'
+  s.add_dependency 'omniauth-google-oauth2'
   s.add_dependency 'cancancan',                 '~> 1.9'
   s.add_dependency 'delayed_job',               '~> 4'
   s.add_dependency 'tinymce-rails', '~> 4.1', '>= 4.1.0'
