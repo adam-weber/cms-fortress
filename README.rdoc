@@ -1,3 +1,14 @@
+IT Oxygen Instructions
+1. bundle install (NO Update!)
+2. rake db:drop db:create db:migrate db:seed (@adam-weber has the seed data available...it's gitignored due to sensitive information)
+  a. This will seed the DB with the IT Oxygen site and hostname only! (You may need to change the hostname in db/seed)
+3. Start server and login with Google account to create your user in the database. You will be automagically created as a default user with no roles or priveleges.
+4. Logout of yourself and login with administrator credentials defined in migration 01
+5. Make your gmail user account a super user!
+6. Remind @adam-weber to change the host name of the google API and to provide you with the keys
+7. That should be all...
+
+
 {<img src="https://badge.fury.io/rb/cms-fortress.png" alt="Gem Version" />}[http://badge.fury.io/rb/cms-fortress]
 {<img src="https://gemnasium.com/melvinsembrano/cms-fortress.png" alt="Dependencies" />}[https://gemnasium.com/melvinsembrano/cms-fortress]
 {<img src="https://codeclimate.com/github/melvinsembrano/cms-fortress.png" alt="Code Climate" />}[https://codeclimate.com/github/melvinsembrano/cms-fortress]

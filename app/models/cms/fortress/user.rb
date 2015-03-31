@@ -8,9 +8,7 @@ class Cms::Fortress::User < ActiveRecord::Base
   # devise :database_authenticatable,
   #        :recoverable, :rememberable, :trackable, :validatable, :timeoutable
 
-  devise :database_authenticatable, :registerable,
-       :recoverable, :rememberable, :trackable, :validatable, :timeoutable,
-       :omniauthable, :omniauth_providers => [:google_oauth2]
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :timeoutable, :omniauthable, :omniauth_providers => [:google_oauth2]
 
   # devise :omniauthable, :omniauth_providers => [:google_oauth2]
 
