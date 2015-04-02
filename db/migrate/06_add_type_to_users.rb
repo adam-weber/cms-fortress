@@ -5,6 +5,7 @@ class AddTypeToUsers < ActiveRecord::Migration
     add_column :cms_fortress_users, :provider, :string
     add_column :cms_fortress_users, :uid, :string
     add_column :cms_fortress_users, :image, :string
+    add_column :cms_fortress_users, :bio, :text
 
     add_column :cms_fortress_roles, :site_id, :integer
     add_column :cms_fortress_role_details, :site_id, :integer

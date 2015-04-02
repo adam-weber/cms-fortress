@@ -40,6 +40,7 @@ class Cms::Fortress::User < ActiveRecord::Base
       user.first_name = auth.info.first_name
       user.last_name = auth.info.last_name
       user.image = auth.info.image
+      user.site_id = 1
     end
   end
 

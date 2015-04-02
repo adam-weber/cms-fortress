@@ -1,11 +1,19 @@
-= form.text_field :last_name
 = form.text_field :first_name
+= form.text_field :last_name
 = form.text_field :email
 
 - unless @super_user
   = form.select :role_id, @site.roles.collect {|role| [role.name, role.id]}
 - if @cms_fortress_user.new_record?
   = form.hidden_field :type_id
+
+- #unless ! Google users, dont display password and display the image URL
+/ = form.text_field :image
+
+/ if new user and not a google user, not disabled -- need to enable uploading
+= form.text_field :image, disabled: true
+
+=# form.text_field :bio 
 
 = form.password_field :password
 = form.password_field :password_confirmation
