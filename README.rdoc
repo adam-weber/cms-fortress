@@ -8,6 +8,11 @@ IT Oxygen Instructions
 6. Remind @adam-weber to change the host name of the google API and to provide you with the keys
 7. That should be all...
 
+Authentication
+===============
+**Username:** admin@itoxygen.com
+**Password:** 1234qwer
+
 
 {<img src="https://badge.fury.io/rb/cms-fortress.png" alt="Gem Version" />}[http://badge.fury.io/rb/cms-fortress]
 {<img src="https://gemnasium.com/melvinsembrano/cms-fortress.png" alt="Dependencies" />}[https://gemnasium.com/melvinsembrano/cms-fortress]

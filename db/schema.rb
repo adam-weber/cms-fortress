@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 7) do
     t.string   "provider"
     t.string   "uid"
     t.string   "image"
+    t.text     "bio"
   end
 
   add_index "cms_fortress_users", ["email"], name: "index_cms_fortress_users_on_email", unique: true

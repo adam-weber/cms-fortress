@@ -61,11 +61,10 @@
         - if current_cms_fortress_user
           %li.dropdown
             %a.navbar-link.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
-              = current_cms_fortress_user.display_name
+              Welcome,
+              = current_cms_fortress_user.first_name
               %span.caret
             %ul.dropdown-menu{role: "menu"}
               %li
-                %a{href: '/sign_out', class: 'navbar-link'} Sign Out
-
-                =# link_to t('cms.fortress.logout'), destroy_cms_fortress_user_session_path, :method => 'delete', class: "navbar-link"
+                =link_to t('cms.fortress.logout'), destroy_cms_fortress_user_session_path, :method => 'delete', class: "navbar-link"
 

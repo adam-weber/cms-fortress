@@ -27,6 +27,9 @@
       - unless @super_user
         - if cms_fortress_user.role
           %td= cms_fortress_user.role.name
+        - else
+          %td 
+            .label.label-warning No role assigned
       %td
         .btn-group.pull-right
           = link_to t('cms.fortress.edit'), edit_cms_fortress_user_path(cms_fortress_user), :class => 'btn btn-sm btn-default'

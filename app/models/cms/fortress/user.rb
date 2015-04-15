@@ -28,9 +28,9 @@ class Cms::Fortress::User < ActiveRecord::Base
     self.class.types[type_id]
   end
 
-  def display_name
-    "#{ email } (#{ type.to_s.titleize })"
-  end
+  # def display_name
+  #   "#{ first_name } (#{ type.to_s.titleize })"
+  # end
 
 
   def self.from_omniauth(auth)
