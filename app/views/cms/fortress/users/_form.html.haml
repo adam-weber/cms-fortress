@@ -15,8 +15,9 @@
 
 =# form.text_field :bio 
 
-= form.password_field :password
-= form.password_field :password_confirmation
+-if @cms_fortress_user.provider != "google_oauth2"
+  = form.password_field :password
+  = form.password_field :password_confirmation
 
 = form.form_group :class => 'form-actions' do
   = form.submit @cms_fortress_user.new_record? ? t('cms.fortress.create') : t('cms.fortress.update'), :class => 'btn btn-primary'
