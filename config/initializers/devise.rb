@@ -7,7 +7,7 @@ Devise.setup do |config|
   # config.secret_key = '7a99751503eca61d4cd43961f4e76a758934c5359cf619de700e48cdcf3c2b8cd168c602ac6573f05e2bb5ab98680b0d2669a6c9bb053981f328ee43196014a2'
 
   require 'omniauth-google-oauth2'
-  config.omniauth :google_oauth2, "SECRET", "SECRET", {}
+  config.omniauth :google_oauth2, "864660615831-e33eh9eu81kudec1hvtf7aqet3kjtjdp.apps.googleusercontent.com", "egHzPzXiEIo4abtuKfadFMnS", { access_type: "offline", approval_prompt: "" }
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
